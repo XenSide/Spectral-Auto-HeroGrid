@@ -25,5 +25,5 @@ A personal suggestion of mine is using the league for your current patch instead
 
 The tier lists will be saved with a S! prefix. Anything with an S! prefix will get deleted when this is run to allow for quick updating.
 
-A special thanks to leamare for spectral.gg and its API, a godsend for dota 2 stats
+A special thanks to [leamare](https://github.com/leamare) for spectral.gg and its API, a godsend for dota 2 stats
 
