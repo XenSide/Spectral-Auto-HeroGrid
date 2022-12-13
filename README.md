@@ -23,3 +23,4 @@ A personal suggestion of mine is using the league for your current patch instead
 The tier lists will be saved with a S! prefix. Anything with an S! prefix will get deleted when this is run to allow for quick updating.
 
 ![image](https://i.imgur.com/hRrqf2q.png)
+![image](https://i.imgur.com/Mxop8Xe.jpeg)
