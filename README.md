@@ -2,6 +2,7 @@
 
 1. Reduced the columns from 3 to 2 (from 25+ rank to 50+ rank only) 
 1. Added a filter for low games with the same functionality of "Remove low picks" in the web version of Spectral.gg
+1. Added a specific Hard Support and Soft Support tab, removed the mixed "Support" tab
 
 # Windows guide
 
