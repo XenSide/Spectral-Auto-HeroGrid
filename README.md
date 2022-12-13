@@ -4,6 +4,9 @@
 1. Added a filter for low games with the same functionality of "Remove low picks" in the web version of Spectral.gg
 1. Added a specific Hard Support and Soft Support tab, removed the mixed "Support" tab
 
+![image](https://i.imgur.com/hRrqf2q.png)
+![image](https://i.imgur.com/Mxop8Xe.jpeg)
+
 # Windows guide
 
 1. Install [Python](https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l) and download [this package](https://github.com/derac/Auto-Dota2-Hero-Grid/archive/refs/heads/master.zip).
@@ -22,5 +25,5 @@ A personal suggestion of mine is using the league for your current patch instead
 
 The tier lists will be saved with a S! prefix. Anything with an S! prefix will get deleted when this is run to allow for quick updating.
 
-![image](https://i.imgur.com/hRrqf2q.png)
-![image](https://i.imgur.com/Mxop8Xe.jpeg)
+A special thanks to leamare for spectral.gg and its API, a godsend for dota 2 stats
+
