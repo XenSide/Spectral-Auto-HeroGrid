@@ -1,3 +1,8 @@
+# Changes in this fork
+
+1. Reduced the columns from 3 to 2 (from 25+ rank to 50+ rank only) 
+1. Added a filter for low games with the same functionality of "Remove low picks" in the web version of Spectral.gg
+
 # Windows guide
 
 1. Install [Python](https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l) and download [this package](https://github.com/derac/Auto-Dota2-Hero-Grid/archive/refs/heads/master.zip).
@@ -5,6 +10,8 @@
 1. `Shift+right click` empty space in the folder and click `Open PowerShell window here`.
 1. Type `pip install requests` and press `Enter`
 1. Type `python generate-grid.py` and press `Enter`
+
+A personal suggestion of mine is using the league for your current patch instead of leaving the default one (last week Immortal meta) by typing `python generate-grid.py -l LEAGUENAME` where LEAGUENAME is taken from the [Spectral.gg league list](https://stats.spectral.gg/lrg2/?cat=ranked)
 
 # Linux usage
 
