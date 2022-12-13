@@ -54,35 +54,40 @@ spec_pos = {
     "Core Safelane": "1.1",
     "Core Midlane": "1.2",
     "Core Offlane": "1.3",
-    "Support": "0.0",
+    "Hard Support": "0.1",
+    "Soft Support": "0.3",
 }
 
 pos_confs = []  # Create tier configs from spectral.gg
 all_roles = {"config_name": "S! All Roles " + date_str, "categories": []}
 for pos_num, (pos_name, pos_endpoint) in enumerate(spec_pos.items()):
-    hero_data = json.loads(requests.get(spec_url + pos_endpoint).content)["result"][
-        pos_endpoint
-    ]
-    hero_ranks = sorted(
-        [(data["rank"], hero_id) for hero_id, data in hero_data.items()],
-        key=lambda x: -x[0],
-    )
+    hero_data = json.loads(requests.get(spec_url + pos_endpoint).content)["result"][pos_endpoint]
+
+    #Use these to calculate a PERCENTAGE of all games played as a value for filtervar
+    hero_matches_total = sum(d['matches_s'] for d in hero_data.values() if d)
+    OPhero_matches_total = hero_matches_total * 0.01 #OnePercent    
+    #filtervar =  OPhero_matches_total #edit this variable with a minimum number of games acceptable, the median variable can be used to mimic spectral.gg "remove low matches" filter
+
+    #Use these to calculate a hero picks median to use as value for filtervar
+    hero_matches = sorted([(data["matches_s"], hero_id) for hero_id, data in hero_data.items()], key=lambda x: -x[0],)
+    median = int(hero_matches[int(len(hero_matches)/2)][0])
+    filtervar =  median #edit this variable with a minimum number of games acceptable, the median variable can be used to mimic spectral.gg "remove low matches" filter
+
+    hero_ranks = sorted([(data["rank"], hero_id , data["matches_s"]) for hero_id, data in hero_data.items() if data['matches_s'] > filtervar], key=lambda x: -x[0],)
+
+    #print(hero_ranks)
     pos_conf = {
         "config_name": "S! " + pos_name + date_str,
         "categories": [
             {
                 "category_name": chr(65 + i) + " tier - rank %s+" % (100 - 5 * i - 5),
-                "x_position": i // 5 * 400,
+                "x_position": i // 5 * 550 + 150,
                 "y_position": (i % 5) * 120,
                 "width": 400,
                 "height": 100,
-                "hero_ids": [
-                    id
-                    for rank, id in hero_ranks
-                    if (100 - 5 * i) >= rank > (100 - 5 * i - 5)
-                ],
+                "hero_ids": [id for rank, id, matches in hero_ranks if (100 - 5 * i) >= rank > (100 - 5 * i - 5)],
             }
-            for i in range(15)
+            for i in range(10)
         ],
     }
     pos_confs.append(pos_conf)
@@ -94,7 +99,7 @@ for pos_num, (pos_name, pos_endpoint) in enumerate(spec_pos.items()):
             "y_position": pos_num * 120,
             "width": 1200,
             "height": 100,
-            "hero_ids": [id for rank, id in hero_ranks[:20]],
+            "hero_ids": [id for rank, id, matches in hero_ranks[:20]],
         }
     )
     if args.verbose:
