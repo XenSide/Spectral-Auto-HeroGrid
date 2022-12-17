@@ -23,12 +23,14 @@ parser.add_argument(
     "-l",
     default="imm_ranked_meta_last_7",
     type=str,
-    help="If you don't enter the user_id, the script will try to write to every user on the system.",
+    help="If you don't enter a custom league, the script will use the most recent \"Immortal Last 7 days\".",
 )
 parser.add_argument("-verbose", "-v", action="store_true", help="Show debug info.")
 args = parser.parse_args()
 parser.print_help()
 print()
+
+print("Using league = "+args.league)
 
 if not args.steam_install_path:
     print("Attempting to get Steam install path from registry.")
