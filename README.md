@@ -5,7 +5,7 @@
 1. Added a specific Hard Support and Soft Support tab, removed the mixed "Support" tab
 
 ![image](https://i.imgur.com/hRrqf2q.png)
-![image](https://i.imgur.com/Mxop8Xe.jpeg)
+![image](https://i.imgur.com/oPpCi7S.jpeg)
 
 # Windows guide
 
