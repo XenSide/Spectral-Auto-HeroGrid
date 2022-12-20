@@ -1,7 +1,9 @@
 # Changes in this fork
-
+v1.2
+1. Added a filter (-fv) for low games, it has two options: op (onepercent) or median (which is default and the same functionality of "Remove low picks" in the web version of Spectral.gg)
+1. Added a sort (-s) choice where you can choose to sort either for rank or for number of matches, sorting by matches offers a more neutral overview of the current meta while sorting for rank offers more niche but very powerful heroes
+v1.0
 1. Reduced the columns from 3 to 2 (from 25+ rank to 50+ rank only) 
-1. Added a filter for low games with the same functionality of "Remove low picks" in the web version of Spectral.gg
 1. Added a specific Hard Support and Soft Support tab, removed the mixed "Support" tab
 
 ![image](https://i.imgur.com/hRrqf2q.png)
